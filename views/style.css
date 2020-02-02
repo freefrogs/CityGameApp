@@ -17,11 +17,57 @@ body {
   color: var(--font);
 }
 
-header,
-footer {
-  margin: 30px 0;
+.container {
+  width: 80%;
+  max-width: 1600px;
+  margin: 2% auto;
+  padding: 2%;
+  height: 100vh;
+  box-shadow: 0 0 10px var(--details);
+  background-color: rgba(255,255,255,0.5);
 }
 
 a {
   text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+/* Navigation */
+nav {
+  padding: 2%;
+  background-color: var(--details);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav ul {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+nav li {
+  min-width: 150px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+nav li a {
+  color: var(--main_background);
+  font-weight: 700;
+  font-size: 18px;
+  transition: all .4s;
+}
+
+nav li a:hover {
+  border-bottom: 1px solid var(--main_background);
+}
+
+nav img {
+  padding: 2%;
+  max-width: 150px;
 }

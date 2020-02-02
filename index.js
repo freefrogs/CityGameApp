@@ -6,6 +6,8 @@ const app = express();
 app.set('view engine', 'pug');
 app.set('views', './views');
 app.use(express.json());
+app.use(express.static('public'));
+app.use('/favicon.ico', express.static('images/favicon.ico'));
 
 app.get('/', (req, res) => {
   res.render('main');

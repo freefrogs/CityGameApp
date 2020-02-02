@@ -1,3 +1,10 @@
+:root {
+  --main_background: rgb(252,252,252);
+  --font: rgb(32,58,64);
+  --details: rgb(0,175,216);
+}
+
+/* Genaral */
 * {
   margin: 0;
   padding: 0;
@@ -5,10 +12,16 @@
 }
 
 body {
-  background-color: #cdcdcd;
+  font-family: 'Lato', sans-serif;
+  background-color: var(--main_background);
+  color: var(--font);
 }
 
 header,
 footer {
   margin: 30px 0;
+}
+
+a {
+  text-decoration: none;
 }

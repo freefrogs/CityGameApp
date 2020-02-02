@@ -1,13 +1,11 @@
 doctype html
 html(lang='pl')
-  head
-    meta(charset=UTF-8)
-    title RestoreCityGame
-    meta(name='viewport' content='with=device-vidth, initial-scale=1.0')
-    style
-      include ./style.css
+  include ./head.pug
   body
-    .main_container
-      include ./header.pug
-      h3 App under construction!
+    include ./header.pug
+    .main
+      h1 Centrum ReStore
+      h3 Wielkie otwarcie 14.03.2020r
+      p Centrum ReStore to przestrzeń skupiająca działania prospołeczne oraz sklep dobroczynny.
+      p Choć trzonem Centrum ReStore będzie sklep ReStore, nie będzie to miejsce służące wyłącznie do robienia zakupów. Będzie to również przestrzeń na prowadzenie warsztatów rzemieślniczych, działań edukacyjnych z obszaru ekologii i ekonomii cyrkularnej, gdzie wspierana będzie twórczość rzemieślnicza i prowadzone będą działania na styku wytwórczości i kultury oraz aktywizacji zawodowej.
     include ./footer.pug

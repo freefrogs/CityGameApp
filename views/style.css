@@ -1,5 +1,6 @@
 :root {
   --main_background: rgb(252,252,252);
+  --font_family: 'Lato', sans-serif;
   --font: rgb(32,58,64);
   --details: rgb(0,175,216);
   --facebook: rgb(66,103,178);
@@ -16,7 +17,7 @@
 }
 
 body {
-  font-family: 'Lato', sans-serif;
+  font-family: var(--font_family);
   background-color: var(--main_background);
   color: var(--font);
   background-image: url('/meble.png');
@@ -55,6 +56,44 @@ h1 {
 nav, .copyright, nav ul, footer nav p {
   display: flex;
   align-items: center;
+}
+
+form {
+  width: 80%;
+  margin: 10px auto;
+  padding: 10px;
+}
+
+.mainButton, input {
+  display: block;
+  border: none;
+  outline: none;
+  font-family: var(--font_family);
+  font-size: 16px;
+  margin: 30px auto;
+  transition: all 0.6s;
+}
+
+.mainButton {
+  padding: 10px 20px;
+  text-transform: uppercase;
+  background-color: var(--details);
+  border-radius: 5px;
+  color: var(--main_background);
+  cursor: pointer;
+}
+
+.mainButton:hover {
+  background-color: var(--font);
+}
+
+input {
+  width: 70%;
+  border-bottom: 1px solid var(--details);
+}
+
+input:focus {
+  border-bottom: 1px solid var(--font);
 }
 
 /* Navigation */
@@ -104,6 +143,17 @@ nav img:hover {
 /* Home */
 .main p {
   text-align: justify;
+}
+
+/* Register */
+.register p {
+  text-align: center;
+  padding: 5px;
+}
+
+.register p span {
+  color: var(--details);
+  font-weight: 700;
 }
 
 /* Footer */

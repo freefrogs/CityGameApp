@@ -13,5 +13,9 @@ app.get('/', (req, res) => {
   res.render('main');
 })
 
+app.get('/register', (req, res) => {
+  res.render('register');
+})
+
 const port = process.env.PORT || 3000;
 app.listen(port, () => console.log(`Listening on port ${ port }`));

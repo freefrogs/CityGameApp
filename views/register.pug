@@ -1,0 +1,18 @@
+doctype html
+html(lang='pl')
+  include ./head.pug
+  body
+    .container
+      include ./header.pug
+      .main.register
+        h1 ReStore City Game Rejestracja
+        form
+          input(type='text' placeholder='Nazwa drużyny')
+          input(type='email' placeholder='E-mail')
+          input(type='password' placeholder='Hasło')
+          input(type='password' placeholder='Powtórz hasło')
+          button.mainButton(type='submit') zarejestruj
+        p Po prawidłowej rejestracji otrzymasz maila potwierdzającego udział Twojej drużyny w grze.
+        p W razie jakichkolwiek problemów skontaktuj się z naszym koordynatorem 
+          span example@example.com
+      include ./footer.pug

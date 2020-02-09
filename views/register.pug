@@ -7,10 +7,11 @@ html(lang='pl')
       .main.register
         h1 ReStore City Game Rejestracja
         form
-          input(type='text' placeholder='Nazwa drużyny')
-          input(type='email' placeholder='E-mail')
-          input(type='password' placeholder='Hasło')
-          input(type='password' placeholder='Powtórz hasło')
+          input(type='text' name="name" placeholder='Nazwa drużyny')
+          input(type='email' name="email" placeholder='E-mail')
+          input(type='password' name="password" placeholder='Hasło')
+          input(type='password' name="password" placeholder='Powtórz hasło')
+          div.status
           button.mainButton(type='submit') zarejestruj
         p Po prawidłowej rejestracji otrzymasz maila potwierdzającego udział Twojej drużyny w grze.
         p W razie jakichkolwiek problemów skontaktuj się z naszym koordynatorem 

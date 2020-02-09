@@ -156,6 +156,11 @@ nav img:hover {
   font-weight: 700;
 }
 
+.status p {
+  padding: 2px;
+  font-weight: 700;
+}
+
 /* Footer */
 footer {
   background-color: var(--font);

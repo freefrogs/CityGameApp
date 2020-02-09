@@ -5,6 +5,8 @@ const basicDebug = require('debug')('app:startup');
 const dbDebug = require('debug')('app:db');
 const morgan = require('morgan');
 
+const team = require('./routes/teams');
+
 const app = express();
 
 const connectionString = `mongodb://${process.env.DB_USER}:${process.env.DB_PASSWORD}@${process.env.DB_DATABASE_ADDRESS}/${process.env.DB_DATABASE_NAME}`;
@@ -36,9 +38,7 @@ app.get('/', (req, res) => {
   res.render('main');
 })
 
-app.get('/register', (req, res) => {
-  res.render('register');
-})
+app.use('/register', team);
 
 const port = process.env.PORT || 3000;
 app.listen(port, () => console.log(`Listening on port ${ port }`));

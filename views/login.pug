@@ -1,0 +1,17 @@
+doctype html
+html(lang='pl')
+  include ./head.pug
+  body
+    .container
+      include ./header.pug
+      .main.register
+        h1 ReStore City Game Logowanie
+        form(method='POST' action='/login')
+          input(type='text' name='name' class='name' placeholder='Nazwa drużyny lub E-mail')
+          input(type='password' name='password' class='password' placeholder='Hasło')
+          div.status
+          button.mainButton(type='submit') zaloguj
+        p W razie jakichkolwiek problemów skontaktuj się z naszym koordynatorem 
+          span example@example.com
+      include ./footer.pug
+    script(src="/main.js")

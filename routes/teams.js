@@ -19,10 +19,20 @@ router.post('/', async (req, res) => {
 
   //Checking whether team is already registered
   let team = await Team.findOne({ email: req.body.email });
-  if (team) return res.status(400).send('Ten email jest już zarejestrowny w grze');
+  if (team) {
+    //return res.status(400).send('Ten email jest już zarejestrowny w grze');
+    return res.render('register', {
+      errorText: 'Ten email jest już zarejestrowany w grze'
+    });
+  }
 
   team = await Team.findOne({ name: req.body.name });
-  if (team) return res.status(400).send('Istnieje już drużyna o takiej nazwie');
+  if (team) {
+    //return res.status(400).send('Istnieje już drużyna o takiej nazwie');
+    return res.render('register', {
+      errorText: 'Istnieje już drużyna o takiej nazwie'
+    });
+  }
 
   //Hashing the password
   const salt = await bcrypt.genSalt(10);
@@ -60,7 +70,7 @@ router.post('/', async (req, res) => {
       <p>
         Miłego dnia!<br>
         Zespół Habitat for Humanity Poland<br>
-        <span style='color:rgb(0,175,216)'>example@example.com  http://habitat.pl/restore/</span>
+        <span style='padding-right:20px'>example@example.com</span><span>http://habitat.pl/restore/</span>
       </p>
     </div>
   `;
@@ -85,7 +95,10 @@ router.post('/', async (req, res) => {
 
   transporter.sendMail(message, (error, info) => {
     if (error) {
-      return res.status(400).send(error);
+      //return res.status(400).send(error);
+      return res.render('register', {
+        errorText: 'Coś poszło nie tak :-(, spróbuj ponownie za kilka minut'
+      });
     }
 
     return res.redirect('/');

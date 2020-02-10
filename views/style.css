@@ -145,7 +145,7 @@ nav img:hover {
   text-align: justify;
 }
 
-/* Register */
+/* Register/Login */
 .register p {
   text-align: center;
   padding: 5px;
@@ -159,6 +159,11 @@ nav img:hover {
 .status p {
   padding: 2px;
   font-weight: 700;
+  color: var(--youtube);
+}
+
+.error {
+  font-size: 25px;
 }
 
 /* Footer */

@@ -38,6 +38,10 @@ app.get('/', (req, res) => {
   res.render('main');
 })
 
+app.get('/login', (req, res) => {
+  res.render('login');
+})
+
 app.use('/register', team);
 
 const port = process.env.PORT || 3000;

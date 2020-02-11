@@ -12,9 +12,11 @@ html(lang='pl')
           input(type='password' name='password' class='password' placeholder='Hasło')
           input(type='password' name='password2' class='password2' placeholder='Powtórz hasło')
           div.status
+            p.error=errorText
           button.mainButton(type='submit') zarejestruj
         p Po prawidłowej rejestracji otrzymasz maila potwierdzającego udział Twojej drużyny w grze.
         p W razie jakichkolwiek problemów skontaktuj się z naszym koordynatorem 
           span example@example.com
       include ./footer.pug
     script(src="/main.js")
+    script(src="/hamburger.js")

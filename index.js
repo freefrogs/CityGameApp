@@ -9,6 +9,11 @@ const team = require('./routes/teams');
 
 const app = express();
 
+
+if (app.get('env') === 'production') {
+  require('./middleware/prod')(app);
+}
+
 const connectionString = `mongodb://${process.env.DB_USER}:${process.env.DB_PASSWORD}@${process.env.DB_DATABASE_ADDRESS}/${process.env.DB_DATABASE_NAME}`;
 mongoose.connect(connectionString, {
   useNewUrlParser: true,

@@ -27,6 +27,7 @@ body {
   background-color: var(--main_background);
   color: var(--font);
   background-image: url('/meble.png');
+  min-width: 360px;
 }
 
 .container {
@@ -340,12 +341,52 @@ footer .fa_icon:hover {
 }
 
 /* RWD */
+@media (max-width: 1100px) {
+  /* Footer */
+  footer nav p {
+    width: 70%;
+  }
+}
+
 @media (max-width: 900px) {
+  /* General */
+  h1 {
+    width: 80%;
+  }
+  form, input {
+    width: 90%;
+  }
+  .container {
+    width: 90%;
+  }
   /* Navigation */
   .navSmall {
     display: inherit;
   }
   .navBig {
     display: none;
+  }
+}
+
+@media (max-width: 680px) {
+  /* Footer */
+  footer nav, .copyright {
+    flex-wrap: wrap;
+  }
+  footer nav p {
+    width: 100%;
+  }
+  .copyright p {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+@media (max-width: 490px) {
+  footer .fa_icon {
+    width: 35px;
+    height: 35px;
+    line-height: 35px;
+    font-size: 18px;
   }
 }

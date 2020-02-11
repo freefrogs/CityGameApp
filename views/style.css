@@ -6,14 +6,20 @@
   --facebook: rgb(66,103,178);
   --twitter: rgb(29,161,242);
   --youtube: rgb(196,48,43);
-  --instagram: radial-gradient(circle at bottom left, rgb(255,220,128), rgb(245,96,64), rgb(131,58,180), rgb(64,93,230))
+  --instagram: radial-gradient(circle at bottom left, rgb(255,220,128), rgb(245,96,64), rgb(131,58,180), rgb(64,93,230));
+  --hamburger_time: all .5s ease-in-out;
 }
 
 /* Genaral */
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
 * {
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  -webkit-tap-highlight-color: transparent;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
 }
 
 body {
@@ -101,32 +107,37 @@ nav {
   padding: 10px;
   background-color: var(--details);
   justify-content: space-between;
+  position: relative;
+  overflow: hidden;
 }
 
-nav ul, footer nav p {
+.overflow {
+  overflow: visible;
+}
+
+nav .navBig, footer nav p {
   justify-content: space-evenly;
 }
 
-nav li {
+nav .navBig li {
   min-width: 150px;
   text-align: center;
   text-transform: uppercase;
   transition: all .4s;
 }
 
-nav li a {
+nav .navBig li a {
   color: var(--main_background);
   font-weight: 700;
   font-size: 18px;
   transition: all .4s;
 }
 
-nav li a:hover {
-  
+nav .navBig li a:hover {
   text-shadow: 0 5px 5px var(--font);
 }
 
-nav li:hover {
+nav .navBig li:hover {
   transform: scale(1.1);
 }
 
@@ -138,6 +149,101 @@ nav img {
 
 nav img:hover {
   box-shadow: 0 0 5px var(--main_background);
+}
+
+/* Hamburger */
+.navSmall {
+  display: none;
+}
+
+.menu {
+  position: absolute;
+  right: -100px;
+  top: -100px;
+  width: 200px;
+  height: 200px;
+  background-color: var(--main_background);
+  border-radius: 50%;
+  transition: var(--hamburger_time);
+  box-shadow: 0 0 0 0 var(--main_background), 0 0 0 0 var(--main_background);
+  cursor: pointer;
+}
+
+.hamburger {
+  position: absolute;
+  top: 135px;
+  left: 50px;
+  width: 30px;
+  height: 2px;
+  background-color: var(--font);
+  display: block;
+  transform-origin: center;
+  transition: var(--hamburger_time);
+}
+
+.hamburger:after, .hamburger:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: block;
+  background-color: var(--font);
+}
+
+.hamburger:after {
+  top: -10px;
+  transition: var(--hamburger_time);
+}
+
+.hamburger:before {
+  top: 10px;
+  transition: var(--hamburger_time);
+}
+
+.navSmall input {
+  display: none;
+}
+
+.navSmall input:checked + .menu {
+  box-shadow: 0 0 0 100vw var(--main_background), 0 0 0 100vh var(--main_background);
+  border-radius: 0;
+}
+
+.navSmall input:checked + .menu .hamburger {
+  transform: rotate(45deg);
+}
+
+.navSmall input:checked + .menu .hamburger:after {
+  opacity: 0;
+}
+
+.navSmall input:checked + .menu .hamburger:before {
+  transform: rotate(90deg);
+  top: 0;
+}
+
+.navSmall input:checked + .menu + ul {
+  top: 50%;
+}
+
+.navSmall ul {
+  height: 30vh;
+  position: absolute;
+  z-index: 10;
+  transition: var(--hamburger_time);
+  top: -200px;
+  left: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  transform: translate(-50%,-50%);
+}
+
+.navSmall ul a {
+  font-weight: 700;
+  font-size: 18px;
+  color: var(--font);
+  text-transform: uppercase;
 }
 
 /* Home */
@@ -231,4 +337,15 @@ footer .fa_icon:hover {
 
 .instagram {
   background: var(--instagram);
+}
+
+/* RWD */
+@media (max-width: 900px) {
+  /* Navigation */
+  .navSmall {
+    display: inherit;
+  }
+  .navBig {
+    display: none;
+  }
 }

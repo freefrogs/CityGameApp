@@ -1,12 +1,22 @@
 header
-  nav
+  nav.navigation
     a(href='http://habitat.pl/restore/' target='_blank')
       img.logo(src='/ReStore_logo.png' alt='ReStore logo')
-    ul
+    ul.navBig
       li
         a(href='/') home
       li
         a(href='/register') rejestracja
       li
         a(href='/login') logowanie
-    
+    label.navSmall
+      input(type="checkbox")
+      span.menu
+        span.hamburger
+      ul
+        li
+          a(href='/') home
+        li
+          a(href='/register') rejestracja
+        li
+          a(href='/login') logowanie

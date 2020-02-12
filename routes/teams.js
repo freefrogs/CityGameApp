@@ -76,7 +76,7 @@ router.post('/', async (req, res) => {
   `;
 
   const transporter = nodemailer.createTransport({
-    host: 'smtp.gmail.com',
+    host: 'smtp.emaillabs.net.pl',
     port: 465,
     secure: true,
     auth: {
@@ -86,7 +86,7 @@ router.post('/', async (req, res) => {
   });
 
   const message = {
-    from: process.env.EMAIL,
+    from: 'ReStore City Game',
     to: req.body.email,
     subject: 'Rejestracja - ReStore City Game ♕',
     text: outputText,

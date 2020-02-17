@@ -53,7 +53,7 @@ router.post('/', async (req, res) => {
     Nazwa Twojej dużyny to ${req.body.name}.
     Zapamietaj ją oraz hasło które użyłeś w czasie rejestracji,
     na pewno jeszcze Ci się przydadzą.
-    Dalsze instrukcje otrzymasz dzień przed rozpoczęciem gry (13.03.2020r.).
+    Dalsze instrukcje otrzymasz dzień przed rozpoczęciem gry (20.03.2020r.).
     Miłego dnia!
     Zespół Habitat for Humanity Poland
     example@example.com
@@ -66,7 +66,7 @@ router.post('/', async (req, res) => {
         Nazwa Twojej dużyny to <span style='font-weight:bold'>${req.body.name}</span>.<br>
         Zapamietaj ją oraz hasło które użyłeś w czasie rejestracji, na pewno jeszcze Ci się przydadzą ;).
       </p>
-      <p>Dalsze instrukcje otrzymasz dzień przed rozpoczęciem gry (13.03.2020r.).</p>
+      <p>Dalsze instrukcje otrzymasz dzień przed rozpoczęciem gry (20.03.2020r.).</p>
       <p>
         Miłego dnia!<br>
         Zespół Habitat for Humanity Poland<br>

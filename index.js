@@ -6,6 +6,7 @@ const dbDebug = require('debug')('app:db');
 const morgan = require('morgan');
 
 const team = require('./routes/teams');
+const game = require('./routes/game');
 
 const app = express();
 
@@ -48,6 +49,7 @@ app.get('/login', (req, res) => {
 })
 
 app.use('/register', team);
+app.use('/game', game);
 
 const port = process.env.PORT || 3000;
 app.listen(port, () => console.log(`Listening on port ${ port }`));

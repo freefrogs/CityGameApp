@@ -40,7 +40,7 @@ teamSchema.methods.generateAuthToken = function() {
     },
     process.env.JWT_PRIVATEKEY,
     {
-      expireIn: '1h',
+      expiresIn: '3h',
     }
   );
   return token;
@@ -65,7 +65,7 @@ function validateTeamRegister(team) {
       .required(),
     password2: Joi.ref('password'),
   }).with('password', 'password2');
-  
+
   return schema.validate(team, { abortEarly: false });
 };
 

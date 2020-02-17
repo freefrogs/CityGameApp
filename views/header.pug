@@ -2,21 +2,41 @@ header
   nav.navigation
     a(href='http://habitat.pl/restore/' target='_blank')
       img.logo(src='/ReStore_logo.png' alt='ReStore logo')
-    ul.navBig
-      li
-        a(href='/') home
-      li
-        a(href='/register') rejestracja
-      //-li
-        a(href='/login') logowanie
-    label.navSmall
-      input(type="checkbox")
-      span.menu
-        span.hamburger
-      ul
+    if (!team)
+      ul.navBig
         li
           a(href='/') home
         li
           a(href='/register') rejestracja
-        //-li
+        li
           a(href='/login') logowanie
+      label.navSmall
+        input(type="checkbox")
+        span.menu
+          span.hamburger
+        ul
+          li
+            a(href='/') home
+          li
+            a(href='/register') rejestracja
+          li
+            a(href='/login') logowanie
+    else
+      ul.navBig
+        li
+          a(href='/') home
+        li
+          a(href='/') Moja drużyna
+        li
+          a(href='/') Wyloguj
+      label.navSmall
+        input(type="checkbox")
+        span.menu
+          span.hamburger
+        ul
+          li
+            a(href='/') home
+          li
+            a(href='/') Moja drużyna
+          li
+            a(href='/') Wyloguj

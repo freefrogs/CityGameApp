@@ -8,6 +8,8 @@
   --youtube: rgb(196,48,43);
   --instagram: radial-gradient(circle at bottom left, rgb(255,220,128), rgb(245,96,64), rgb(131,58,180), rgb(64,93,230));
   --hamburger_time: all .5s ease-in-out;
+  --border: rgb(98, 39, 140);
+  --game: rgb(17, 13, 120);
 }
 
 /* Genaral */
@@ -60,7 +62,7 @@ h1 {
   border-bottom: 2px solid var(--details);
 }
 
-nav, .copyright, nav ul, footer nav p {
+nav, .copyright, nav ul, footer nav p, .powers, .path form {
   display: flex;
   align-items: center;
 }
@@ -273,6 +275,90 @@ nav img:hover {
   font-size: 25px;
 }
 
+/* Game */
+.containerGame {
+  background-image: linear-gradient(45deg, rgba(252,139,199,0.1), rgba(46,63,148,0.1), rgba(197,100,250,0.1), rgba(252,28,110,0.1), rgba(250,160,25,0.1));
+}
+
+.containerGame h1 {
+  border: none;
+}
+
+.containerGame h2 {
+  color: var(--details);
+  margin-bottom: 15px;
+}
+
+.powers {
+  justify-content: space-evenly;
+  padding: 20px;
+}
+
+.super {
+  width: 7vw;
+  height: 7vw;
+  margin: 1vw;
+  box-shadow: 0 0 5px var(--font);
+  border-radius: 50%;
+  background-size: cover;
+}
+
+.dust {
+  margin: 20px auto;
+  width: 200px;
+  height: 100px;
+  border-radius: 0 0 50% 50%;
+  box-shadow: 0 0 5px var(--font);
+}
+
+.path {
+  width: 80%;
+  margin: 0 auto;
+  padding: 20px;
+  border-top: 2px solid var(--details)
+}
+
+.path:nth-of-type(odd) {
+  border-right: 4px solid var(--details);
+}
+
+.path:nth-of-type(odd) * {
+  text-align: right;
+}
+
+.path:nth-of-type(even) {
+  border-left: 6px solid var(--details);
+}
+
+.path:nth-of-type(even) * {
+  text-align: left;
+}
+
+.path form {
+  padding: 5px;
+  margin: 0;
+}
+
+.path form p {
+  text-transform: uppercase;
+}
+
+.path .mainButton, .path input {
+  margin: 10px auto;
+}
+
+.path .mainButton {
+  font-size: 14px;
+}
+
+.containerGame .path input {
+  width: 150px;
+  padding: 10px;
+  border: 2px solid var(--details);
+  border-radius: 5px;
+  text-align: center;
+}
+
 /* Footer */
 footer {
   background-color: var(--font);
@@ -397,6 +483,16 @@ footer .fa_icon:hover {
   }
 }
 
+@media (max-width: 750px) {
+  .path {
+    width: 98%;
+  }
+  .super {
+    width: 10vw;
+    height: 10vw;
+  }
+}
+
 @media (max-width: 680px) {
   /* Footer */
   footer nav, .copyright {
@@ -409,6 +505,14 @@ footer .fa_icon:hover {
     width: 100%;
     text-align: center;
   }
+}
+
+@media (max-width: 600px) {
+ .path form {
+   flex-direction: column;
+   box-shadow: 0 0 3px var(--font);
+   margin-bottom: 10px;
+ }
 }
 
 @media (max-width: 490px) {

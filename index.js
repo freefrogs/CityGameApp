@@ -7,10 +7,12 @@ const morgan = require('morgan');
 const cookieParser = require('cookie-parser');
 const { checkAuthentication } = require('./middleware/auth');
 
+
 const teams = require('./routes/teams');
 const login = require('./routes/login');
 const logout = require('./routes/logout');
 const admin = require('./routes/admin');
+const game = require('./routes/game');
 
 const app = express();
 
@@ -53,6 +55,7 @@ app.use('/login', login);
 app.use('/register', teams);
 app.use('/logout', logout);
 app.use('/teams', admin);
+app.use('/game', game);
 
 const port = process.env.PORT || 3000;
 app.listen(port, () => console.log(`Listening on port ${ port }`));

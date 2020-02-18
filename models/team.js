@@ -33,6 +33,15 @@ const teamSchema = new mongoose.Schema({
   isAdmin: {
     type: Boolean,
     default: false
+  },
+  points: {
+    type: Number,
+    min: 0,
+    max: 100,
+    default: 0
+  },
+  powers: {
+    type: Array
   }
 });
 
@@ -69,6 +78,9 @@ function validateTeamRegister(team) {
       .max(500)
       .required(),
     password2: Joi.ref('password'),
+    points: Joi.number()
+      .min(0)
+      .max(100),
   }).with('password', 'password2');
 
   return schema.validate(team, { abortEarly: false });

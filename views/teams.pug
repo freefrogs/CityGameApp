@@ -1,0 +1,20 @@
+doctype html
+html(lang='pl')
+  include ./head.pug
+  body
+    .container
+      include ./header.pug
+      .main
+        .teams_admin
+          .teams_headings
+            p Nazwa drużyny
+            p E-mail kontaktowy
+          each team in teams
+            .team_admin
+              p=team.name
+              p=team.email
+        .teams_email
+          p=emails
+      include ./footer.pug
+    script(src="/hamburger.js")
+    script(src="/admin.js")

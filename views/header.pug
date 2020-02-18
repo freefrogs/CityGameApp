@@ -2,21 +2,64 @@ header
   nav.navigation
     a(href='http://habitat.pl/restore/' target='_blank')
       img.logo(src='/ReStore_logo.png' alt='ReStore logo')
-    ul.navBig
-      li
-        a(href='/') home
-      li
-        a(href='/register') rejestracja
-      //-li
-        a(href='/login') logowanie
-    label.navSmall
-      input(type="checkbox")
-      span.menu
-        span.hamburger
-      ul
+    if (team && team.isAdmin)
+      ul.navBig
+        li
+          a(href='/') home
+        li
+          a(href='/teams') Drużyny
+        li
+          a(href='/logout') Wyloguj
+      label.navSmall
+        input(type="checkbox")
+        span.menu
+          span.hamburger
+        ul
+          li
+            a(href='/') home
+          li
+            a(href='/teams') rejestracja
+          li
+            a(href='/logout') logowanie
+    else if (team && team.name)
+      ul.navBig
+        li
+          a(href='/') home
+        li
+          a(href='/game/' + team._id) Gra
+        li
+          a(href='/map/') Mapa
+        li
+          a(href='/logout') Wyloguj
+      label.navSmall
+        input(type="checkbox")
+        span.menu
+          span.hamburger
+        ul
+          li
+            a(href='/') home
+          li
+            a(href='/game/' + team._id) Gra
+          li
+            a(href='/map/') Mapa
+          li
+            a(href='/logout') Wyloguj
+    else
+      ul.navBig
         li
           a(href='/') home
         li
           a(href='/register') rejestracja
-        //-li
+        li
           a(href='/login') logowanie
+      label.navSmall
+        input(type="checkbox")
+        span.menu
+          span.hamburger
+        ul
+          li
+            a(href='/') home
+          li
+            a(href='/register') rejestracja
+          li
+            a(href='/login') logowanie

@@ -30,6 +30,10 @@ const teamSchema = new mongoose.Schema({
     maxlength: 500,
     trim: true
   },
+  isAdmin: {
+    type: Boolean,
+    default: false
+  },
   points: {
     type: Number,
     min: 0,
@@ -45,11 +49,12 @@ teamSchema.methods.generateAuthToken = function() {
   const token = jwt.sign(
     {
       _id: this.id,
-      name: this.name
+      name: this.name,
+      isAdmin: this.isAdmin
     },
     process.env.JWT_PRIVATEKEY,
     {
-      expireIn: '1h',
+      expiresIn: '3h',
     }
   );
   return token;
@@ -77,7 +82,7 @@ function validateTeamRegister(team) {
       .min(0)
       .max(100),
   }).with('password', 'password2');
-  
+
   return schema.validate(team, { abortEarly: false });
 };
 

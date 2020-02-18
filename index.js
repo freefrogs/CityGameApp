@@ -4,8 +4,14 @@ const mongoose = require('mongoose');
 const basicDebug = require('debug')('app:startup');
 const dbDebug = require('debug')('app:db');
 const morgan = require('morgan');
+const cookieParser = require('cookie-parser');
+const { checkAuthentication } = require('./middleware/auth');
 
-const team = require('./routes/teams');
+
+const teams = require('./routes/teams');
+const login = require('./routes/login');
+const logout = require('./routes/logout');
+const admin = require('./routes/admin');
 const game = require('./routes/game');
 
 const app = express();
@@ -39,16 +45,16 @@ app.use('/favicon.ico', express.static('images/favicon.ico'));
 app.use(express.urlencoded({
   extended: true,
 }));
+app.use(cookieParser());
 
-app.get('/', (req, res) => {
+app.get('/', checkAuthentication, (req, res) => {
   res.render('main');
 })
 
-app.get('/login', (req, res) => {
-  res.render('login');
-})
-
-app.use('/register', team);
+app.use('/login', login);
+app.use('/register', teams);
+app.use('/logout', logout);
+app.use('/teams', admin);
 app.use('/game', game);
 
 const port = process.env.PORT || 3000;

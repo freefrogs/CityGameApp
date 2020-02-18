@@ -2,22 +2,22 @@ doctype html
 html(lang='pl')
   include ./head.pug
   body
-    .container
+    .container.containerGame
       include ./header.pug
       .main.game
         h1 Restoraki kontra Śmieciuch
-        div
-          h3 Cel
+        .path
+          h2 Cel
           p Zdobądź supermoce, uzupełnij zasoby magicznego piasku i pokonaj złego Śmieciucha
-        div
-          h3 Fabuła
+        .path
+          h2 Fabuła
           p Naszą dzielnicę nawiedził straszny i okrutny Śmieciuch. Jego słudzy rozleźli się po okolicy, zostawiając wszędzie ślady swojej obecności. Cała nadzieja w grupie superbohaterów spod znaku drużyny ReStore, którzy stawią czoło Śmieciuchowi i jego bandzie. Zostań członkiem tej drużyny, weź udział w grze, zdobądź supermoce. Wspólnie z innymi ReStorakami pokonaj złego Śmieciucha.
-        div
-          h3 Wskazówki
+        .path
+          h2 Wskazówki
           p Wśród zakładek znajdziecie mape na której zaznaczone są miejsca gdzie znajdują się pomocnicy Restoraków. Gdy już dotrzecie we wskazane miejsce szukajcie osób w kraciastych koszulach, ogrodniczkach i kaskach. Każdy z pomocników będzie miał dla Was zadanie. Po realizacji zadania otrzymacie kod który odblokuje jedną z supermocy oraz zwiększy ilość Waszego kolorowowego piasku, dzięki którym pokonacie złego Śmieciucha.
-        div
-          h3 Zadania
-          form
+        .path
+          h2 Zadania
+          form(method='POST' action='/game')
             p Zadanie 1:
             input(type='text' name='code' class='code' placeholder='Tu wpisz kod')
             button.mainButton(type='submit') zatwierdź kod
@@ -37,8 +37,8 @@ html(lang='pl')
             p Zadanie 5:
             input(type='text' name='code' class='code' placeholder='Tu wpisz kod')
             button.mainButton(type='submit') zatwierdź kod
-        div
-          h3 Punkty
+        .path
+          h2 Punkty
           h4 Twoje supermoce:
           .powers
             .super.super1
@@ -48,8 +48,8 @@ html(lang='pl')
             .super.super5
           h4 Twoje zasoby kolorowego piasku:
           .dust
-        div
-          h3 Część praktyczna
+        .path
+          h2 Część praktyczna
           p Gra trwa od godziny 12:00 do 15:00. O godzinie 15:00 musicie być na miejscu zakończenia gry, do którego zaprowadzą was wskazówki podane przez Animatorów (nawet jeżeli nie uda się wykonać wszystkich zadań).
           p W razie jakichkolwiek kłopotów w trakcie gry pomoc możecie uzyskać pod numerem telefonu: 
             span 123 456 789

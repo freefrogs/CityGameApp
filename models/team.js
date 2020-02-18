@@ -29,6 +29,10 @@ const teamSchema = new mongoose.Schema({
     minlength: 6,
     maxlength: 500,
     trim: true
+  },
+  isAdmin: {
+    type: Boolean,
+    default: false
   }
 });
 
@@ -36,7 +40,8 @@ teamSchema.methods.generateAuthToken = function() {
   const token = jwt.sign(
     {
       _id: this.id,
-      name: this.name
+      name: this.name,
+      isAdmin: this.isAdmin
     },
     process.env.JWT_PRIVATEKEY,
     {

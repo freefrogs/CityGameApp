@@ -340,6 +340,35 @@ footer .fa_icon:hover {
   background: var(--instagram);
 }
 
+/* Teams info */
+.teams_admin {
+  display: flex;
+  flex-direction: column;
+}
+
+.team_admin, .teams_headings {
+  display: flex;
+  justify-content: space-evenly;
+  border: 1px solid var(--details);
+  align-content: center;
+}
+
+.teams_headings {
+  margin-top: 20px;
+  border: 3px solid var(--details);
+}
+
+.team_admin p, .teams_headings p {
+  display: inline-block;
+  width: 50%;
+  padding: 10px 0; 
+  border-right: 1px dashed var(--details);
+}
+
+.team_admin p:last-child, .teams_headings p:last-child {
+  border-right: none;
+}
+
 /* RWD */
 @media (max-width: 1100px) {
   /* Footer */

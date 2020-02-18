@@ -9,6 +9,8 @@ const { checkAuthentication } = require('./middleware/auth');
 
 const teams = require('./routes/teams');
 const login = require('./routes/login');
+const logout = require('./routes/logout');
+const admin = require('./routes/admin');
 
 const app = express();
 
@@ -48,8 +50,9 @@ app.get('/', checkAuthentication, (req, res) => {
 })
 
 app.use('/login', login);
-
 app.use('/register', teams);
+app.use('/logout', logout);
+app.use('/teams', admin);
 
 const port = process.env.PORT || 3000;
 app.listen(port, () => console.log(`Listening on port ${ port }`));

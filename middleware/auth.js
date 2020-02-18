@@ -10,7 +10,7 @@ const checkAuthentication = async(req, res, next) => {
       return next();
     } else {
       const decrypt = await jwt.verify(token, process.env.JWT_PRIVATEKEY);
-      res.locals.team = decrypt.name;
+      res.locals.team = decrypt;
       return next();
     }
   } catch(err) {

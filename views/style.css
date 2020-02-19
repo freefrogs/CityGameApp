@@ -8,8 +8,6 @@
   --youtube: rgb(196,48,43);
   --instagram: radial-gradient(circle at bottom left, rgb(255,220,128), rgb(245,96,64), rgb(131,58,180), rgb(64,93,230));
   --hamburger_time: all .5s ease-in-out;
-  --border: rgb(98, 39, 140);
-  --game: rgb(17, 13, 120);
 }
 
 /* Genaral */
@@ -276,9 +274,9 @@ nav img:hover {
 }
 
 /* Game */
-.containerGame {
+/* .containerGame {
   background-image: linear-gradient(45deg, rgba(252,139,199,0.1), rgba(46,63,148,0.1), rgba(197,100,250,0.1), rgba(252,28,110,0.1), rgba(250,160,25,0.1));
-}
+} */
 
 .containerGame h1 {
   border: none;
@@ -357,6 +355,10 @@ nav img:hover {
   border: 2px solid var(--details);
   border-radius: 5px;
   text-align: center;
+}
+
+.task, button:disabled, input:disabled {
+  display: none;
 }
 
 /* Footer */

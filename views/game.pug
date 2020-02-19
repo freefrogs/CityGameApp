@@ -17,25 +17,32 @@ html(lang='pl')
           p Wśród zakładek znajdziecie mape na której zaznaczone są miejsca gdzie znajdują się pomocnicy Restoraków. Gdy już dotrzecie we wskazane miejsce szukajcie osób w kraciastych koszulach, ogrodniczkach i kaskach. Każdy z pomocników będzie miał dla Was zadanie. Po realizacji zadania otrzymacie kod który odblokuje jedną z supermocy oraz zwiększy ilość Waszego kolorowowego piasku, dzięki którym pokonacie złego Śmieciucha.
         .path
           h2 Zadania
-          form(method='POST' action='/game')
+          div.status
+            p.error=errorText
+          form(method='POST' action='/game/:id')
             p Zadanie 1:
             input(type='text' name='code' class='code' placeholder='Tu wpisz kod')
+            input(type="checkbox" class='task' name='power' value='task1' checked)
             button.mainButton(type='submit') zatwierdź kod
-          form
+          form(method='POST' action='/game/:id')
             p Zadanie 2:
             input(type='text' name='code' class='code' placeholder='Tu wpisz kod')
+            input(type="checkbox" class='task' name='power' value='task2' checked)
             button.mainButton(type='submit') zatwierdź kod
-          form
+          form(method='POST' action='/game/:id')
             p Zadanie 3:
             input(type='text' name='code' class='code' placeholder='Tu wpisz kod')
+            input(type="checkbox" class='task' name='power' value='task3' checked)
             button.mainButton(type='submit') zatwierdź kod
-          form
+          form(method='POST' action='/game/:id')
             p Zadanie 4:
             input(type='text' name='code' class='code' placeholder='Tu wpisz kod')
+            input(type="checkbox" class='task' name='power' value='task4' checked)
             button.mainButton(type='submit') zatwierdź kod
-          form
+          form(method='POST' action='/game/:id')
             p Zadanie 5:
             input(type='text' name='code' class='code' placeholder='Tu wpisz kod')
+            input(type="checkbox" class='task' name='power' value='task5' checked)
             button.mainButton(type='submit') zatwierdź kod
         .path
           h2 Punkty

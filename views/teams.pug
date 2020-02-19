@@ -6,15 +6,20 @@ html(lang='pl')
       include ./header.pug
       .main
         .teams_admin
-          .teams_headings
-            p Nazwa drużyny
-            p E-mail kontaktowy
-          each team in teams
-            .team_admin
-              p=team.name
-              p=team.email
+          table.table_data
+            caption Drużyny biorące udział w grze
+            tr.table_headings 
+              th Nazwa drużyny
+              th E-mail kontaktowy
+              th Ilość punktów
+            each team in teams
+              tr.team_data
+                th=team.name
+                th=team.email
+                th=team.points
         .teams_email
-          p=emails
+          button.mainButton.email_button Pokaż dane kontaktowe
+          p.emails_string=emails
       include ./footer.pug
-    script(src="/hamburger.js")
     script(src="/admin.js")
+    script(src="/hamburger.js")

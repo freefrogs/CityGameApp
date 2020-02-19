@@ -50,6 +50,7 @@ teamSchema.methods.generateAuthToken = function() {
     {
       _id: this.id,
       name: this.name,
+      points: this.points,
       isAdmin: this.isAdmin
     },
     process.env.JWT_PRIVATEKEY,

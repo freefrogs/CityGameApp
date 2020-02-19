@@ -1,24 +1,30 @@
 const express = require('express');
-const router = express.Router();
+const router = express.Router()
 const { Team } = require('../models/team');
 const { checkAuthentication } = require('../middleware/auth');
 
 //Game view 
 router.get('/:id', checkAuthentication, async (req, res) => {
-  const user_id = res.locals.team._id;
-  const team = await Team.findById(user_id);
-  const power1 = team.powers.includes('power1');
-  const power2 = team.powers.includes('power2');
-  const power3 = team.powers.includes('power3');
-  const power4 = team.powers.includes('power4');
-  const power5 = team.powers.includes('power5');
-  res.render('game', {
-    power1: power1,
-    power2: power2,
-    power3: power3,
-    power4: power4,
-    power5: power5,
-  });
+  if (res.locals.team._id) {
+    if (res.locals.team._id === req.params.id) {
+      const user_id = res.locals.team._id;
+      const team = await Team.findById(user_id);
+      const power1 = team.powers.includes('power1');
+      const power2 = team.powers.includes('power2');
+      const power3 = team.powers.includes('power3');
+      const power4 = team.powers.includes('power4');
+      const power5 = team.powers.includes('power5');
+      return res.render('game', {
+        power1: power1,
+        power2: power2,
+        power3: power3,
+        power4: power4,
+        power5: power5,
+      });
+    }
+    return res.render('badpath');
+  } 
+  return res.render('main');
 });
 
 //Add points
@@ -66,6 +72,6 @@ router.post('/:id', checkAuthentication, async (req, res) => {
   }
 
   res.redirect(`/game/${user_id}`);
-})
+});
 
 module.exports = router;

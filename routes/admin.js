@@ -10,11 +10,11 @@ router.get('/', checkAuthentication, async(req, res) => {
   if (!team.isAdmin) {
     return res.status(401).redirect('/');
   } else {
-    const teams = await Team.find().sort('name');
+    const teams = await Team.find({ isAdmin: false }).sort('-points');
 
     let emails = '';
     for (let team of teams) {
-      emails += team.email + ';';
+      emails += team.email + '; ';
     }
 
     return res.render('teams', {

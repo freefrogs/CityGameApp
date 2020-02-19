@@ -17,35 +17,72 @@ html(lang='pl')
           p Wśród zakładek znajdziecie mape na której zaznaczone są miejsca gdzie znajdują się pomocnicy Restoraków. Gdy już dotrzecie we wskazane miejsce szukajcie osób w kraciastych koszulach, ogrodniczkach i kaskach. Każdy z pomocników będzie miał dla Was zadanie. Po realizacji zadania otrzymacie kod który odblokuje jedną z supermocy oraz zwiększy ilość Waszego kolorowowego piasku, dzięki którym pokonacie złego Śmieciucha.
         .path
           h2 Zadania
-          form(method='POST' action='/game')
+          div.status
+            p.error=errorText
+          form(method='POST' action='/game/:id')
             p Zadanie 1:
-            input(type='text' name='code' class='code' placeholder='Tu wpisz kod')
-            button.mainButton(type='submit') zatwierdź kod
-          form
+            if power1
+              i.fa.fa-check-circle
+            else
+              input(type='text' name='code' class='code' placeholder='Tu wpisz kod')
+              input(type="checkbox" class='task' name='power' value='task1' checked)
+              button.mainButton(type='submit') zatwierdź kod
+          form(method='POST' action='/game/:id')
             p Zadanie 2:
-            input(type='text' name='code' class='code' placeholder='Tu wpisz kod')
-            button.mainButton(type='submit') zatwierdź kod
-          form
+            if power2
+              i.fa.fa-check-circle
+            else
+              input(type='text' name='code' class='code' placeholder='Tu wpisz kod')
+              input(type="checkbox" class='task' name='power' value='task2' checked)
+              button.mainButton(type='submit') zatwierdź kod
+          form(method='POST' action='/game/:id')
             p Zadanie 3:
-            input(type='text' name='code' class='code' placeholder='Tu wpisz kod')
-            button.mainButton(type='submit') zatwierdź kod
-          form
+            if power3
+              i.fa.fa-check-circle
+            else
+              input(type='text' name='code' class='code' placeholder='Tu wpisz kod')
+              input(type="checkbox" class='task' name='power' value='task3' checked)
+              button.mainButton(type='submit') zatwierdź kod
+          form(method='POST' action='/game/:id')
             p Zadanie 4:
-            input(type='text' name='code' class='code' placeholder='Tu wpisz kod')
-            button.mainButton(type='submit') zatwierdź kod
-          form
+            if power4
+              i.fa.fa-check-circle
+            else
+              input(type='text' name='code' class='code' placeholder='Tu wpisz kod')
+              input(type="checkbox" class='task' name='power' value='task4' checked)
+              button.mainButton(type='submit') zatwierdź kod
+          form(method='POST' action='/game/:id')
             p Zadanie 5:
-            input(type='text' name='code' class='code' placeholder='Tu wpisz kod')
-            button.mainButton(type='submit') zatwierdź kod
+            if power5
+              i.fa.fa-check-circle
+            else
+              input(type='text' name='code' class='code' placeholder='Tu wpisz kod')
+              input(type="checkbox" class='task' name='power' value='task5' checked)
+              button.mainButton(type='submit') zatwierdź kod
         .path
           h2 Punkty
           h4 Twoje supermoce:
           .powers
-            .super.super1
-            .super.super2
-            .super.super3
-            .super.super4
-            .super.super5
+            if power1
+              .super.super1
+            else
+              .super
+            if power2
+              .super.super2
+            else
+              .super
+            if power3
+              .super.super3
+            else
+              .super
+            if power4
+              .super.super4
+            else
+              .super
+            if power5
+              .super.super5
+            else
+              .super
           h4 Twoje zasoby kolorowego piasku:
           .dust
         .path

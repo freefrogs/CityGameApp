@@ -57,5 +57,9 @@ app.use('/logout', logout);
 app.use('/teams', admin);
 app.use('/game', game);
 
+app.use(checkAuthentication, function (req, res, next) {
+  res.status(404).render('badpath')
+});
+
 const port = process.env.PORT || 3000;
 app.listen(port, () => console.log(`Listening on port ${ port }`));

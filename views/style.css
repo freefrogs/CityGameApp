@@ -426,33 +426,69 @@ footer .fa_icon:hover {
   background: var(--instagram);
 }
 
-/* Teams info */
-.teams_admin {
+/* Teams info for admin */
+
+.teams_admin, .emails_string {
   display: flex;
   flex-direction: column;
+  font-size: 2rem;
 }
 
-.team_admin, .teams_headings {
-  display: flex;
-  justify-content: space-evenly;
-  border: 1px solid var(--details);
-  align-content: center;
+.table_data {
+  margin: 10px;
+  border-collapse: collapse;
 }
 
-.teams_headings {
-  margin-top: 20px;
-  border: 3px solid var(--details);
+.table_data th {
+  border: 1px solid var(--font);
+  padding: 5px 0px;
+  font-size: 0.5em;
 }
 
-.team_admin p, .teams_headings p {
-  display: inline-block;
-  width: 50%;
-  padding: 10px 0; 
-  border-right: 1px dashed var(--details);
+.table_data caption {
+  margin: 20px;
+  font-size: 0.75em;
+  font-weight: 700;
+  color: var(--details);
 }
 
-.team_admin p:last-child, .teams_headings p:last-child {
-  border-right: none;
+.table_headings th {
+  font-size: 0.65em;
+  padding: 8px 0;
+  background-color: var(--font);
+  color: var(--main_background);
+  font-weight: 700;
+  border-right: 1px solid var(--main_background);
+}
+
+.table_headings th:last-child {
+  border-right: 1px solid var(--font);
+}
+
+.emails_string {
+  font-size: 16px;
+  margin: 30px;
+  display: none;
+}
+
+.emails_visible {
+  display: block;
+}
+
+/* Bad path */
+
+.bad_path {
+  margin: 50px 0;
+  text-align: center;
+}
+
+.bad_path h2 {
+  font-size: 2.5rem;
+  margin: 20px 0;
+}
+
+.bad_path h3 {
+  font-size: 2rem;
 }
 
 /* RWD */
@@ -491,6 +527,10 @@ footer .fa_icon:hover {
     width: 10vw;
     height: 10vw;
   }
+
+  .table_data tr th:nth-child(2) {
+    display: none;
+  }
 }
 
 @media (max-width: 680px) {
@@ -513,6 +553,11 @@ footer .fa_icon:hover {
    box-shadow: 0 0 3px var(--font);
    margin-bottom: 10px;
  }
+
+ .teams_admin {
+   font-size: 1.75rem;
+ }
+
 }
 
 @media (max-width: 490px) {

@@ -252,7 +252,7 @@ nav img:hover {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-  transform: translate(-50%,-50%);
+  transform: translateX(-50%);
 }
 
 .navSmall ul a {
@@ -284,8 +284,10 @@ nav img:hover {
   color: var(--youtube);
 }
 
-.error {
+.game .path .error {
   font-size: 25px;
+  text-align: center;
+  padding-bottom: 10px;
 }
 
 /* Game */
@@ -301,18 +303,21 @@ nav img:hover {
 
 .powers {
   justify-content: space-evenly;
+  flex-wrap: wrap;
   padding: 20px;
 }
 
 .fa-check-circle {
   font-size: 30px;
-  color: rgb(42, 191, 19);
+  color: var(--details);
   padding-left: 20px;
 }
 
 .super {
   width: 7vw;
+  min-width: 80px;
   height: 7vw;
+  min-height: 80px;
   margin: 1vw;
   box-shadow: 0 0 5px var(--font);
   border-radius: 50%;
@@ -320,23 +325,23 @@ nav img:hover {
 }
 
 .super1 {
-  background: red;
+  background-image: url('/badge/badge1.png'), radial-gradient(rgb(250, 247, 52), rgb(201, 250, 110));
 }
 
 .super2 {
-  background: blue;
+  background-image: url('/badge/badge2.png'), radial-gradient(rgb(255, 255, 255), rgb(255, 255, 255), rgb(67, 165, 250));
 }
 
 .super3 {
-  background: greenyellow;
+  background-image: url('/badge/badge9.png'), radial-gradient(rgb(250, 217, 30), rgb(255, 255, 255), rgb(11, 156, 28));
 }
 
 .super4 {
-  background: hotpink;
+  background-image: url('/badge/badge10.png'), radial-gradient(rgb(250, 218, 182), rgb(255, 255, 255), rgb(250, 153, 17));
 }
 
 .super5 {
-  background: lawngreen;
+  background-image: url('/badge/badge11.png'), radial-gradient(rgb(255,255,255), rgb(255,255,255), rgb(250, 67, 30));
 }
 
 .dust {

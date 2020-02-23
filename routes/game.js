@@ -14,12 +14,15 @@ router.get('/:id', checkAuthentication, async (req, res) => {
       const power3 = team.powers.includes('power3');
       const power4 = team.powers.includes('power4');
       const power5 = team.powers.includes('power5');
+      const transform = team.points * 1.5;
+
       return res.render('game', {
         power1: power1,
         power2: power2,
         power3: power3,
         power4: power4,
         power5: power5,
+        transform: transform
       });
     }
     return res.render('badpath');

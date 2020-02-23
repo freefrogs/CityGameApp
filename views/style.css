@@ -8,7 +8,22 @@
   --youtube: rgb(196,48,43);
   --instagram: radial-gradient(circle at bottom left, rgb(255,220,128), rgb(245,96,64), rgb(131,58,180), rgb(64,93,230));
   --hamburger_time: all .5s ease-in-out;
+  --transform-anim: -55%;
 }
+
+/* keyframes */ 
+@keyframes animateSand {
+  0% { transform: translate(-50%, var(--transform-anim)) rotate(0deg);}
+  100% { transform: translate(-50%, var(--transform-anim)) rotate(360deg);}
+}
+ @keyframes animateColor {
+  0% { background-color: rgba(255, 50, 0, 0.8); }
+  20% { background-color: rgba(220, 0, 0, 0.8); }
+  40% { background-color: rgba(0, 0, 220, 0.8); }
+  60% { background-color: rgba(0, 220, 0, 0.8); }
+  80% { background-color:rgba(238, 255, 0, 0.6); }
+  100% { background-color: rgba(255, 50, 0, 0.8); }
+ }
 
 /* Genaral */
 *, *:before, *:after {
@@ -274,9 +289,6 @@ nav img:hover {
 }
 
 /* Game */
-/* .containerGame {
-  background-image: linear-gradient(45deg, rgba(252,139,199,0.1), rgba(46,63,148,0.1), rgba(197,100,250,0.1), rgba(252,28,110,0.1), rgba(250,160,25,0.1));
-} */
 
 .containerGame h1 {
   border: none;
@@ -330,9 +342,46 @@ nav img:hover {
 .dust {
   margin: 20px auto;
   width: 200px;
-  height: 100px;
-  border-radius: 0 0 50% 50%;
+  height: 300px;
+  border-radius: 0 0 40% 40%;
   box-shadow: 0 0 5px var(--font);
+  position: relative;
+  overflow: hidden; 
+}
+
+.liquid {
+  position: relative; 
+  left: 0; 
+  top: 0; 
+  width: 100%;
+  height: 100%;
+  background: orangered;
+  animation: animateColor 15s linear infinite;
+  box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.5);
+  transition: 0.5s;
+}
+
+.liquid::before, .liquid::after {
+  content: '';
+  position: absolute;
+  width: 300%;
+  height: 200%;
+  top: 0; 
+  left: 50%;
+  background-color: #000;
+  transform: translate(-50%, var(--transform-anim));
+}
+
+.liquid::before {
+  border-radius: 48%;
+  background: rgba(200, 200, 200, 1);
+  animation: animateSand 6s linear infinite;
+}
+
+.liquid::after {
+  border-radius: 45%;
+  background: rgba(200, 200, 200, 0.4);
+  animation: animateSand 12s linear infinite;
 }
 
 .path {

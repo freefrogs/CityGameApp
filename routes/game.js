@@ -3,26 +3,39 @@ const router = express.Router()
 const { Team } = require('../models/team');
 const { checkAuthentication } = require('../middleware/auth');
 
+const getTeamData = team => {
+  const power1 = team.powers.includes('power1');
+  const power2 = team.powers.includes('power2');
+  const power3 = team.powers.includes('power3');
+  const power4 = team.powers.includes('power4');
+  const power5 = team.powers.includes('power5');
+  const transform = team.points * 1.5;
+  return result = {
+    power1,
+    power2,
+    power3,
+    power4,
+    power5,
+    transform
+  }
+}
+
 //Game view 
 router.get('/:id', checkAuthentication, async (req, res) => {
   if (res.locals.team._id) {
     if (res.locals.team._id === req.params.id) {
       const user_id = res.locals.team._id;
       const team = await Team.findById(user_id);
-      const power1 = team.powers.includes('power1');
-      const power2 = team.powers.includes('power2');
-      const power3 = team.powers.includes('power3');
-      const power4 = team.powers.includes('power4');
-      const power5 = team.powers.includes('power5');
-      const transform = team.points * 1.5;
+      
+      getTeamData(team);
 
       return res.render('game', {
-        power1: power1,
-        power2: power2,
-        power3: power3,
-        power4: power4,
-        power5: power5,
-        transform: transform
+        power1: result.power1,
+        power2: result.power2,
+        power3: result.power3,
+        power4: result.power4,
+        power5: result.power5,
+        transform: result.transform
       });
     }
     return res.render('badpath');
@@ -37,6 +50,7 @@ router.post('/:id', checkAuthentication, async (req, res) => {
 
   const team = await Team.findById(user_id);
   const pkt = team.points + 5
+  getTeamData(team);
 
   if (code === 'aaa' && power ==='task1') {
     team.set ({
@@ -70,6 +84,12 @@ router.post('/:id', checkAuthentication, async (req, res) => {
     await team.save();
   } else {
     return res.render('game', {
+      power1: result.power1,
+      power2: result.power2,
+      power3: result.power3,
+      power4: result.power4,
+      power5: result.power5,
+      transform: result.transform,
       errorText: 'Niepoprawny kod dla tego zadania'
     });
   }

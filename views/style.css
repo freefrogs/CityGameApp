@@ -267,6 +267,10 @@ nav img:hover {
   text-align: justify;
 }
 
+.main h3 {
+  margin: 20px 0;
+}
+
 /* Register/Login */
 .register p {
   text-align: center;
@@ -325,7 +329,7 @@ nav img:hover {
 }
 
 .super1 {
-  background-image: url('/badge/badge1.png'), radial-gradient(rgb(250, 247, 52), rgb(201, 250, 110));
+  background-image: url('/badge/badge1.png'), radial-gradient(rgb(250, 247, 52), rgb(255, 255, 255), rgb(201, 250, 110), rgb(201, 250, 110));
 }
 
 .super2 {

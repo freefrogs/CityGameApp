@@ -39,9 +39,12 @@
 
 body {
   font-family: var(--font_family);
-  background-color: var(--main_background);
-  color: var(--font);
-  background-image: url('/meble.png');
+  background-color: var(--details);
+  color: var(--main_background);
+  background-image: url('/background.png');
+  background-size: 100%;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
   min-width: 360px;
 }
 
@@ -51,8 +54,8 @@ body {
   margin: 2% auto;
   padding: 2%;
   min-height: 90vh;
-  box-shadow: 0 0 10px var(--details);
-  background-color: rgba(255,255,255,0.9);
+  box-shadow: 0 0 10px var(--main_background);
+  background-color: rgba(0,47,108,0.9);
 }
 
 a {
@@ -112,10 +115,17 @@ form {
 input {
   width: 70%;
   border-bottom: 1px solid var(--details);
+  background-color: inherit;
+  color: var(--main_background);
 }
 
 input:focus {
-  border-bottom: 1px solid var(--font);
+  border-bottom: 1px solid var(--main_background);
+}
+
+input::placeholder {
+  color: var(--main_background);
+  opacity: 0.6;
 }
 
 /* Navigation */
@@ -323,7 +333,7 @@ nav img:hover {
   height: 7vw;
   min-height: 80px;
   margin: 1vw;
-  box-shadow: 0 0 5px var(--font);
+  box-shadow: 0 0 10px var(--details);
   border-radius: 50%;
   background-size: cover;
 }
@@ -353,7 +363,7 @@ nav img:hover {
   width: 200px;
   height: 300px;
   border-radius: 0 0 40% 40%;
-  box-shadow: 0 0 5px var(--font);
+  box-shadow: 0 10px 20px var(--details);
   position: relative;
   overflow: hidden; 
 }

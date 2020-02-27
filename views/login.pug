@@ -7,7 +7,7 @@ html(lang='pl')
       .main.register
         h1 ReStore City Game Logowanie
         form(method='POST' action='/login')
-          input(type='text' name='name' class='name' placeholder='Nazwa drużyny lub E-mail')
+          input(type='text' name='name' class='name' placeholder='Nazwa drużyny lub E-mail' autocomplete='new-password')
           input(type='password' name='password' class='password' placeholder='Hasło')
           div.status
             p.error=errorText

@@ -7,8 +7,8 @@ html(lang='pl')
       .main.register
         h1 ReStore City Game Rejestracja
         form(method='POST' action='/register')
-          input(type='text' name='name' class='name' placeholder='Nazwa drużyny')
-          input(type='email' name='email' class='email' placeholder='E-mail')
+          input(type='text' name='name' class='name' placeholder='Nazwa drużyny' autocomplete='new-password')
+          input(type='email' name='email' class='email' placeholder='E-mail' autocomplete='off')
           input(type='password' name='password' class='password' placeholder='Hasło')
           input(type='password' name='password2' class='password2' placeholder='Powtórz hasło')
           div.status

@@ -11,6 +11,10 @@ html(lang='pl')
           input(type='email' name='email' class='email' placeholder='E-mail' autocomplete='off')
           input(type='password' name='password' class='password' placeholder='Hasło')
           input(type='password' name='password2' class='password2' placeholder='Powtórz hasło')
+          div.rodoBox
+            input(type='checkbox' class='rodo' id='rodo') 
+            label(for='rodo') Powierdzam zapoznanie się i akceptuje 
+              a(href='/RODO.pdf' target='_blank') regulamin
           div.status
             p.error=errorText
           button.mainButton(type='submit') zarejestruj

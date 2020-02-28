@@ -304,6 +304,29 @@ nav img:hover {
   padding-bottom: 10px;
 }
 
+.rodoBox {
+  text-align: center;
+}
+
+.rodoBox a {
+  color: var(--main_background);
+  font-weight: 700;
+  text-transform: uppercase;
+  transition: 0.5s;
+  text-decoration: underline;
+}
+
+.rodoBox a:hover {
+  text-shadow: 0 0 5px var(--details);
+}
+
+input.rodo {
+  width: 18px;
+  height: 18px;
+  display: inline-block;
+  margin-right: 10px;
+}
+
 /* Game */
 
 .containerGame h1 {

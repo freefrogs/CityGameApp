@@ -7,8 +7,9 @@ const router = express.Router();
 const { Team, validateTeamRegister } = require('../models/team');
 
 //Register view
-router.get('/', (req, res) => {
-  res.render('register');
+router.get('/', async (req, res) => {
+  const team = await Team.find();
+  res.render('register', { quantity: team.length });
 });
 
 //Add new team

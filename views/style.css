@@ -360,6 +360,14 @@ input.rodo {
   margin-right: 10px;
 }
 
+.limit h3 {
+  font-size: 1.5em;
+}
+
+.limit h3:first-child {
+  color: var(--youtube);
+}
+
 /* Game */
 
 .containerGame h1 {
@@ -668,6 +676,11 @@ footer .fa_icon:hover {
   }
   .navBig {
     display: none;
+  }
+  /* Home */
+  .main iframe {
+    width: 80vw;
+    height: 45vw;
   }
 }
 

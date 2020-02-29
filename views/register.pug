@@ -6,21 +6,26 @@ html(lang='pl')
       include ./header.pug
       .main.register
         h1 ReStore City Game Rejestracja
-        form(method='POST' action='/register')
-          input(type='text' name='name' class='name' placeholder='Nazwa drużyny' autocomplete='new-password')
-          input(type='email' name='email' class='email' placeholder='E-mail' autocomplete='off')
-          input(type='password' name='password' class='password' placeholder='Hasło')
-          input(type='password' name='password2' class='password2' placeholder='Powtórz hasło')
-          div.rodoBox
-            input(type='checkbox' class='rodo' id='rodo') 
-            label(for='rodo') Powierdzam zapoznanie się i akceptuje 
-              a(href='/RODO.pdf' target='_blank') regulamin
-          div.status
-            p.error=errorText
-          button.mainButton(type='submit') zarejestruj
-        p Po prawidłowej rejestracji otrzymasz maila potwierdzającego udział Twojej drużyny w grze.
-        p W razie jakichkolwiek problemów skontaktuj się z naszym koordynatorem 
-          span ewieczorek@habitat.pl
+        if (quantity <= 41)
+          form(method='POST' action='/register')
+            input(type='text' name='name' class='name' placeholder='Nazwa drużyny' autocomplete='new-password')
+            input(type='email' name='email' class='email' placeholder='E-mail' autocomplete='off')
+            input(type='password' name='password' class='password' placeholder='Hasło')
+            input(type='password' name='password2' class='password2' placeholder='Powtórz hasło')
+            div.rodoBox
+              input(type='checkbox' class='rodo' id='rodo') 
+              label(for='rodo') Powierdzam zapoznanie się i akceptuje 
+                a(href='/RODO.pdf' target='_blank') regulamin
+            div.status
+              p.error=errorText
+            button.mainButton(type='submit') zarejestruj
+          p Po prawidłowej rejestracji otrzymasz maila potwierdzającego udział Twojej drużyny w grze.
+          p W razie jakichkolwiek problemów skontaktuj się z naszym koordynatorem 
+            span ewieczorek@habitat.pl
+        else
+          .limit
+            h3 Limit miejsc został wyczepany
+            h3 Zapraszamy na kolejne edycje
       include ./footer.pug
     script(src="/register.js")
     script(src="/hamburger.js")

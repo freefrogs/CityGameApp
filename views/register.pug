@@ -14,13 +14,13 @@ html(lang='pl')
             input(type='password' name='password2' class='password2' placeholder='Powtórz hasło')
             div.rodoBox
               input(type='checkbox' class='rodo' id='rodo') 
-              label(for='rodo') Powierdzam zapoznanie się i akceptuje 
+              label(for='rodo') Potwierdzam zapoznanie się i akceptuję 
                 a(href='/RODO.pdf' target='_blank') regulamin
             div.status
               p.error=errorText
             button.mainButton(type='submit') zarejestruj
           p Po prawidłowej rejestracji otrzymasz maila potwierdzającego udział Twojej drużyny w grze.
-          p W razie jakichkolwiek problemów skontaktuj się z naszym koordynatorem 
+          p W razie jakichkolwiek problemów skontaktuj się z naszym koordynatorem:  
             span ewieczorek@habitat.pl
         else
           .limit

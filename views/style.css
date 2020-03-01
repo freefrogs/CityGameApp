@@ -55,7 +55,7 @@ body {
   padding: 2%;
   min-height: 90vh;
   box-shadow: 0 0 10px var(--main_background);
-  background-color: rgba(0,47,108,0.9);
+  background-color: rgba(0,47,108,0.95);
 }
 
 a {
@@ -142,7 +142,7 @@ nav {
 }
 
 nav .navBig, footer nav p {
-  justify-content: space-evenly;
+  justify-content: space-evenly;re
 }
 
 nav .navBig li {
@@ -262,7 +262,7 @@ nav img:hover {
   position: absolute;
   z-index: 10;
   transition: var(--hamburger_time);
-  top: -200px;
+  top: -350px;
   left: 50%;
   display: flex;
   flex-direction: column;
@@ -310,7 +310,7 @@ nav img:hover {
   text-align: justify;
 }
 
-.restoreBox h3, .main h3 {
+.restoreBox h3, .restoreBox h2, .main h3 {
   margin: 20px 0;
 }
 
@@ -328,7 +328,7 @@ nav img:hover {
 .status p {
   padding: 2px;
   font-weight: 700;
-  color: var(--youtube);
+  color: orangered;
 }
 
 .game .path .error {
@@ -420,6 +420,10 @@ input.rodo {
 
 .super5 {
   background-image: url('/badge/badge11.png'), radial-gradient(rgb(255,255,255), rgb(255,255,255), rgb(250, 67, 30));
+}
+
+.super6 {
+  background-image: url('/badge/badge5.png'), radial-gradient(rgb(250, 153, 17), rgb(255,255,255), rgb(147, 93, 247));
 }
 
 .dust {

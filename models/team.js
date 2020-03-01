@@ -42,6 +42,10 @@ const teamSchema = new mongoose.Schema({
   },
   powers: {
     type: Array
+  },
+  endTime: {
+    type: String,
+    default: ''
   }
 });
 

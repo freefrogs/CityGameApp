@@ -4,19 +4,16 @@ const { Team } = require('../models/team');
 const { checkAuthentication } = require('../middleware/auth');
 
 const getTeamData = team => {
-  const power1 = team.powers.includes('power1');
-  const power2 = team.powers.includes('power2');
-  const power3 = team.powers.includes('power3');
-  const power4 = team.powers.includes('power4');
-  const power5 = team.powers.includes('power5');
-  const transform = team.points * 1.5;
   return result = {
-    power1,
-    power2,
-    power3,
-    power4,
-    power5,
-    transform
+    power1: team.powers.includes('power1'),
+    power2: team.powers.includes('power2'),
+    power3: team.powers.includes('power3'),
+    power4: team.powers.includes('power4'),
+    power5: team.powers.includes('power5'),
+    power6: team.powers.includes('power6'),
+    power7: team.powers.includes('power7'),
+    power8: team.powers.includes('power8'),
+    transform: team.points
   }
 }
 
@@ -35,6 +32,9 @@ router.get('/:id', checkAuthentication, async (req, res) => {
         power3: result.power3,
         power4: result.power4,
         power5: result.power5,
+        power6: result.power6,
+        power7: result.power7,
+        power8: result.power8,
         transform: result.transform
       });
     }
@@ -46,41 +46,49 @@ router.get('/:id', checkAuthentication, async (req, res) => {
 //Add points
 router.post('/:id', checkAuthentication, async (req, res) => {
   const user_id = res.locals.team._id;
-  const { code, power } = req.body;
+  let { code, power } = req.body;
+  code = code.toLowerCase();
+
+  let gameCode = process.env.CODE;
+  const taskTime = new Date().toLocaleTimeString();
 
   const team = await Team.findById(user_id);
-  const pkt = team.points + 5
-  getTeamData(team);
+  let pkt = team.points;
 
-  if (code === 'aaa' && power ==='task1') {
+  if (power === 'power7' || power === 'power8') {
+    gameCode = gameCode.slice(0, 3);
+  }
+  
+  if (gameCode.includes(code[0])) {
+    switch(code[0]) {
+      case gameCode[0]:
+        pkt += 1;
+        break;
+      case gameCode[1]:
+        pkt += 2;
+        break;
+      case gameCode[2]:
+        pkt += 3;
+        break;
+      case gameCode[3]:
+        pkt += 4;
+        break;
+      case gameCode[4]:
+        pkt += 5;
+        break;
+      case gameCode[5]:
+        pkt += 6;
+        break;
+      default:
+        break
+    }
+
     team.set ({
       points: pkt,
+      endTime: taskTime
     });
-    team.powers.push('power1')
-    await team.save();
-  } else if (code === 'bbb' && power ==='task2') {
-    team.set ({
-      points: pkt,
-    });
-    team.powers.push('power2')
-    await team.save();
-  } else if (code === 'ccc' && power ==='task3') {
-    team.set ({
-      points: pkt,
-    });
-    team.powers.push('power3')
-    await team.save();
-  } else if (code === 'ddd' && power ==='task4') {
-    team.set ({
-      points: pkt,
-    });
-    team.powers.push('power4')
-    await team.save();
-  } else if (code === 'eee' && power ==='task5') {
-    team.set ({
-      points: pkt,
-    });
-    team.powers.push('power5')
+    team.powers.push(power);
+
     await team.save();
   } else {
     return res.render('game', {
@@ -89,6 +97,9 @@ router.post('/:id', checkAuthentication, async (req, res) => {
       power3: result.power3,
       power4: result.power4,
       power5: result.power5,
+      power6: result.power6,
+      power7: result.power7,
+      power8: result.power8,
       transform: result.transform,
       errorText: 'Niepoprawny kod dla tego zadania'
     });

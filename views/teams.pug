@@ -12,11 +12,13 @@ html(lang='pl')
               th Nazwa drużyny
               th E-mail kontaktowy
               th Ilość punktów
+              th Czas
             each team in teams
               tr.team_data
                 th=team.name
                 th=team.email
                 th=team.points
+                th=team.endTime
         .teams_email
           button.mainButton.email_button Pokaż dane kontaktowe
           p.emails_string=emails

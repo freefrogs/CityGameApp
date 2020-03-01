@@ -8,13 +8,33 @@ html(lang='pl')
         h1 Restoraki kontra Śmieciuch
         .path
           h2 Cel
-          p Zdobądź supermoce, uzupełnij zasoby magicznego piasku i pokonaj złego Śmieciucha
+          p Zdobądź supermoce, uzupełnij zasoby magicznego piasku i pokonaj złego Śmieciucha.
         .path
           h2 Fabuła
           p Naszą dzielnicę nawiedził straszny i okrutny Śmieciuch. Jego słudzy rozleźli się po okolicy, zostawiając wszędzie ślady swojej obecności. Cała nadzieja w grupie superbohaterów spod znaku drużyny ReStore, którzy stawią czoło Śmieciuchowi i jego bandzie. Zostań członkiem tej drużyny, weź udział w grze, zdobądź supermoce. Wspólnie z innymi ReStorakami pokonaj złego Śmieciucha.
         .path
-          h2 Wskazówki
-          p Wśród zakładek znajdziecie mape na której zaznaczone są miejsca gdzie znajdują się pomocnicy Restoraków. Gdy już dotrzecie we wskazane miejsce szukajcie osób w kraciastych koszulach, ogrodniczkach i kaskach. Każdy z pomocników będzie miał dla Was zadanie. Po realizacji zadania otrzymacie kod który odblokuje jedną z supermocy oraz zwiększy ilość Waszego kolorowowego piasku, dzięki którym pokonacie złego Śmieciucha.
+          h2 Zasady ogólne
+          p Gra trwa od godziny 14:00 do 17:00. O godzinie 17:00 musicie być w ReStore (miejsce zakończenia gry), nawet jeżeli nie uda się wykonać wszystkich zadań.
+          p W trakcie gry drużyny poruszają się wyłącznie pieszo, nie mogą się rozdzielać i realizować zadań mniejszymi grupami. Dodatkowo nie wolno wymieniać się informacjami, przedmiotami, zdjęciami z innymi zespołami.
+        .path
+          h2 Reguły gry
+          h3 Wyposażenie
+          p Na początku gry uzyskujecie dostęp do zasad oraz mapy (zestawy startowe: Karta Zespołu, mapa lub za pośrednictwem aplikacji), dodatkowo każda drużyna otrzymuje pojemnik na piasek.
+          h3 Wykonanie zadań
+          p Aby wykonać zadanie zespół musi odnaleźć pomocnika Restoraków, którego pozycja jest zaznaczona na mapie gry. Gdy już dotrzecie we wskazane miejsce szukajcie osób w kaskach. Po odnalezieniu pomocnika drużyna wykonuje zadania według jego wskazówek. W trakcie wykonania zadania musi być obecny cały zespół.
+          h3 Zdobywanie punktów
+          p Zespoły mogą zdobywać punkty realizując zadania główne zaznaczone na żółto na mapie oraz zadania dodatkowe. Po realizacji zadania otrzymacie hasło, które wpisujecie na Karcie Zespołu lub w odpowiednim polu w aplikacji.
+          h3 Zakończenie gry
+          p Cała drużyna powinna stawić się w ReStore o godzinie 17:00. Tam zdajcie swoje Karty Zespołu. Jeżeli korzystaliście z aplikacji w trakcie gry po prostu się rozgoście.
+          p W tym momencie będzicie mieli możliwość wykorzystania piasku, który zbieraliście w trakcie gry.
+          p Po podliczeniu punktów nastąpi wręczenie nagród. W przypadku tej samem liczby punktów wygrywa drużyna, która szybciej zrealizowała zadania.
+        .path
+          h2 Dodatkowe punkty
+          p Dodatkowe punkty możecie zdobyć rozwiązując dwa pomocnicze zadania. Te zadania są trudniejsze i wymagają Waszej uwagi. Pamiętajcie, że przy realizacji zadań wymagana jest obecność wszystkich członków zespołu.
+          h3 Zadanie wspólne
+          p O godzinie 16:00 stawcie się w punkcie wspólnym zaznaczonym na mapie. Szukajcie pomocnika, od niego dostaniecie dalsze instrukcje.
+          h3 Zadanie dodatkowe
+          p Po obszarze porusza się wyższej rangi pomocnik Restoraków (ma kask w nietypowym kolorze). Odnajdzie go. Dostaniecie dodatkowe punkty jeżeli odpowiecie na jego pytania.
         .path
           h2 Zadania
           div.status
@@ -25,7 +45,7 @@ html(lang='pl')
               i.fa.fa-check-circle
             else
               input(type='text' name='code' class='code' placeholder='Tu wpisz kod')
-              input(type="checkbox" class='task' name='power' value='task1' checked)
+              input(type="checkbox" class='task' name='power' value='power1' checked)
               button.mainButton(type='submit') zatwierdź kod
           form(method='POST' action='/game/:id')
             p Zadanie 2:
@@ -33,7 +53,7 @@ html(lang='pl')
               i.fa.fa-check-circle
             else
               input(type='text' name='code' class='code' placeholder='Tu wpisz kod')
-              input(type="checkbox" class='task' name='power' value='task2' checked)
+              input(type="checkbox" class='task' name='power' value='power2' checked)
               button.mainButton(type='submit') zatwierdź kod
           form(method='POST' action='/game/:id')
             p Zadanie 3:
@@ -41,7 +61,7 @@ html(lang='pl')
               i.fa.fa-check-circle
             else
               input(type='text' name='code' class='code' placeholder='Tu wpisz kod')
-              input(type="checkbox" class='task' name='power' value='task3' checked)
+              input(type="checkbox" class='task' name='power' value='power3' checked)
               button.mainButton(type='submit') zatwierdź kod
           form(method='POST' action='/game/:id')
             p Zadanie 4:
@@ -49,7 +69,7 @@ html(lang='pl')
               i.fa.fa-check-circle
             else
               input(type='text' name='code' class='code' placeholder='Tu wpisz kod')
-              input(type="checkbox" class='task' name='power' value='task4' checked)
+              input(type="checkbox" class='task' name='power' value='power4' checked)
               button.mainButton(type='submit') zatwierdź kod
           form(method='POST' action='/game/:id')
             p Zadanie 5:
@@ -57,7 +77,31 @@ html(lang='pl')
               i.fa.fa-check-circle
             else
               input(type='text' name='code' class='code' placeholder='Tu wpisz kod')
-              input(type="checkbox" class='task' name='power' value='task5' checked)
+              input(type="checkbox" class='task' name='power' value='power5' checked)
+              button.mainButton(type='submit') zatwierdź kod
+          form(method='POST' action='/game/:id')
+            p Zadanie 6:
+            if power6
+              i.fa.fa-check-circle
+            else
+              input(type='text' name='code' class='code' placeholder='Tu wpisz kod')
+              input(type="checkbox" class='task' name='power' value='power6' checked)
+              button.mainButton(type='submit') zatwierdź kod
+          form(method='POST' action='/game/:id')
+            p Zadanie 7:
+            if power7
+              i.fa.fa-check-circle
+            else
+              input(type='text' name='code' class='code' placeholder='Tu wpisz kod')
+              input(type="checkbox" class='task' name='power' value='power7' checked)
+              button.mainButton(type='submit') zatwierdź kod
+          form(method='POST' action='/game/:id')
+            p Zadanie 8:
+            if power8
+              i.fa.fa-check-circle
+            else
+              input(type='text' name='code' class='code' placeholder='Tu wpisz kod')
+              input(type="checkbox" class='task' name='power' value='power8' checked)
               button.mainButton(type='submit') zatwierdź kod
         .path
           h2 Punkty
@@ -83,14 +127,17 @@ html(lang='pl')
               .super.super5
             else
               .super
-          h4 Twoje zasoby kolorowego piasku:
+            if power6
+              .super.super6
+            else
+              .super
+          h4 Wskaźnik postępu:
           .dust
             .liquid(data-transform=transform)
         .path
-          h2 Część praktyczna
-          p Gra trwa od godziny 12:00 do 15:00. O godzinie 15:00 musicie być na miejscu zakończenia gry, do którego zaprowadzą was wskazówki podane przez Animatorów (nawet jeżeli nie uda się wykonać wszystkich zadań).
-          p W razie jakichkolwiek kłopotów w trakcie gry pomoc możecie uzyskać pod numerem telefonu: 
-            span 123 456 789
+          h2 Dodatkowe informacje
+          p W razie jakichkolwiek kłopotów w trakcie gry, pomoc możecie uzyskać pod numerem telefonu: 
+            span 690 979 904.
           p Chcemy by ta gra była dla wszystkich świetną zabawą. W związku z tym prosimy żebyście się kierowali zasadami fair play, rzetelnie realizowali zadania, nie przeszkadzali oraz nie pomagali innym zespołom.
       include ./footer.pug
     script(src="/hamburger.js")

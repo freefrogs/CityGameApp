@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', function() {
   const password = document.querySelector('.password');
   const password2 = document.querySelector('.password2');
   const error = document.querySelector('.status');
+  const rodo = document.querySelector('.rodo');
 
   button.addEventListener('click', function(e) {
     error.innerHTML = '';
@@ -13,6 +14,13 @@ document.addEventListener('DOMContentLoaded', function() {
     const emailVal = email.value;
     const passwordVal = password.value;
     const password2Val = password2.value;
+
+    if (!rodo.checked) {
+      e.preventDefault();
+      const newError = document.createElement('p');
+      newError.innerText = 'Aby zarejestrować się w grze należy zapoznać się i zaakceptować regulamin';
+      error.appendChild(newError);
+    }
 
     if (nameVal.length < 2 || nameVal.length > 20) {
       e.preventDefault();

@@ -51,6 +51,10 @@ app.get('/', checkAuthentication, (req, res) => {
   res.render('main');
 })
 
+app.get('/restore', (req, res) => {
+  res.render('restore');
+})
+
 app.use('/login', login);
 app.use('/register', teams);
 app.use('/logout', logout);

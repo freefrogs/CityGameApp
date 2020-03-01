@@ -7,8 +7,9 @@ const router = express.Router();
 const { Team, validateTeamRegister } = require('../models/team');
 
 //Register view
-router.get('/', (req, res) => {
-  res.render('register');
+router.get('/', async (req, res) => {
+  const team = await Team.find();
+  res.render('register', { quantity: team.length });
 });
 
 //Add new team
@@ -56,21 +57,24 @@ router.post('/', async (req, res) => {
     Dalsze instrukcje otrzymasz dzień przed rozpoczęciem gry (20.03.2020r.).
     Miłego dnia!
     Zespół Habitat for Humanity Poland
-    example@example.com
+    http://habitat.pl/restore/
   `;
   const outputHTML = `
-    <div style='font-family:Calibri,sans-serif;color:rgb(32,58,64);text-align:center;border: 2px dashed rgb(0,175,216);font-size:16px;'>
-      <h2 style='color:rgb(0,175,216);'> Cześć 🙂</h2>
+    <div style='font-family:Calibri,sans-serif;color:rgb(255,255,255);text-align:center;background-color:rgb(0,175,216);font-size:16px;padding:10px;'>
+      <h2 style='text-decoration:underline;margin-top:20px;'>Cześć 🙂</h2>
       <p>To jest potwierdzenie Twojej rejestracji do udziału w grze ReStore City Game.</p>
       <p>
         Nazwa Twojej dużyny to <span style='font-weight:bold'>${req.body.name}</span>.<br>
         Zapamietaj ją oraz hasło które użyłeś w czasie rejestracji, na pewno jeszcze Ci się przydadzą ;).
       </p>
-      <p>Dalsze instrukcje otrzymasz dzień przed rozpoczęciem gry (20.03.2020r.).</p>
+      <p style='text-decoration:underline;'>Dalsze instrukcje otrzymasz dzień przed rozpoczęciem gry (20.03.2020r.).</p>
       <p>
-        Miłego dnia!<br>
-        Zespół Habitat for Humanity Poland<br>
-        <span style='padding-right:20px'>example@example.com</span><span>http://habitat.pl/restore/</span>
+        <img style='height:100px;width:auto;margin-right:20px;' src='https://raw.githubusercontent.com/freefrogs/CityGameApp/master/public/ReStore_logo.png' alt='logo ReStore'>
+        <p>
+          Miłego dnia!<br>
+          Zespół Habitat for Humanity Poland<br>
+          <a href='http://habitat.pl/restore/' style='color:rgb(255,255,255);'>http://habitat.pl/restore/</a>
+        </p>
       </p>
     </div>
   `;

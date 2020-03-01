@@ -39,9 +39,12 @@
 
 body {
   font-family: var(--font_family);
-  background-color: var(--main_background);
-  color: var(--font);
-  background-image: url('/meble.png');
+  background-color: var(--details);
+  color: var(--main_background);
+  background-image: url('/background.png');
+  background-size: 100%;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
   min-width: 360px;
 }
 
@@ -51,8 +54,8 @@ body {
   margin: 2% auto;
   padding: 2%;
   min-height: 90vh;
-  box-shadow: 0 0 10px var(--details);
-  background-color: rgba(255,255,255,0.9);
+  box-shadow: 0 0 10px var(--main_background);
+  background-color: rgba(0,47,108,0.95);
 }
 
 a {
@@ -63,7 +66,7 @@ ul {
   list-style: none;
 }
 
-h1, h3 {
+h1, h2, h3 {
   text-align: center;
   padding: 10px 0;
 }
@@ -112,10 +115,17 @@ form {
 input {
   width: 70%;
   border-bottom: 1px solid var(--details);
+  background-color: inherit;
+  color: var(--main_background);
 }
 
 input:focus {
-  border-bottom: 1px solid var(--font);
+  border-bottom: 1px solid var(--main_background);
+}
+
+input::placeholder {
+  color: var(--main_background);
+  opacity: 0.6;
 }
 
 /* Navigation */
@@ -132,7 +142,7 @@ nav {
 }
 
 nav .navBig, footer nav p {
-  justify-content: space-evenly;
+  justify-content: space-evenly;re
 }
 
 nav .navBig li {
@@ -140,6 +150,11 @@ nav .navBig li {
   text-align: center;
   text-transform: uppercase;
   transition: all .4s;
+}
+
+.navigation .restore {
+  text-transform: none;
+  font-size: 20px;
 }
 
 nav .navBig li a {
@@ -247,7 +262,7 @@ nav img:hover {
   position: absolute;
   z-index: 10;
   transition: var(--hamburger_time);
-  top: -200px;
+  top: -350px;
   left: 50%;
   display: flex;
   flex-direction: column;
@@ -263,8 +278,40 @@ nav img:hover {
 }
 
 /* Home */
+.main {
+  text-align: center;
+}
+
+.main iframe {
+  width: 53vw;
+  height: 30vw;
+  padding: 10px;
+  border: 2px solid var(--details);
+  box-shadow: 0 0 5px var(--main_background);
+}
+
+.main ul {
+  text-align: left;
+  list-style-type: circle;
+  width: 60%;
+  margin: 20px auto;
+}
+
+.main li, .main p {
+  padding: 5px 0;
+}
+
 .main p {
+  line-height: 1.5;
+}
+
+/* ReStore */
+.restoreBox p {
   text-align: justify;
+}
+
+.restoreBox h3, .restoreBox h2, .main h3 {
+  margin: 20px 0;
 }
 
 /* Register/Login */
@@ -281,13 +328,44 @@ nav img:hover {
 .status p {
   padding: 2px;
   font-weight: 700;
-  color: var(--youtube);
+  color: orangered;
 }
 
 .game .path .error {
   font-size: 25px;
   text-align: center;
   padding-bottom: 10px;
+}
+
+.rodoBox {
+  text-align: center;
+}
+
+.rodoBox a, .main a {
+  color: var(--main_background);
+  font-weight: 700;
+  text-transform: uppercase;
+  transition: 0.3s;
+  text-decoration: underline;
+}
+
+.rodoBox a:hover, .main a:hover {
+  text-shadow: 0 0 5px var(--details);
+}
+
+input.rodo {
+  width: 18px;
+  height: 18px;
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.limit h3 {
+  font-size: 1.5em;
+}
+
+.limit h3:first-child {
+  color: var(--youtube);
 }
 
 /* Game */
@@ -319,13 +397,13 @@ nav img:hover {
   height: 7vw;
   min-height: 80px;
   margin: 1vw;
-  box-shadow: 0 0 5px var(--font);
+  box-shadow: 0 0 10px var(--details);
   border-radius: 50%;
   background-size: cover;
 }
 
 .super1 {
-  background-image: url('/badge/badge1.png'), radial-gradient(rgb(250, 247, 52), rgb(201, 250, 110));
+  background-image: url('/badge/badge1.png'), radial-gradient(rgb(250, 247, 52), rgb(255, 255, 255), rgb(201, 250, 110), rgb(201, 250, 110));
 }
 
 .super2 {
@@ -344,12 +422,16 @@ nav img:hover {
   background-image: url('/badge/badge11.png'), radial-gradient(rgb(255,255,255), rgb(255,255,255), rgb(250, 67, 30));
 }
 
+.super6 {
+  background-image: url('/badge/badge5.png'), radial-gradient(rgb(250, 153, 17), rgb(255,255,255), rgb(147, 93, 247));
+}
+
 .dust {
   margin: 20px auto;
   width: 200px;
   height: 300px;
   border-radius: 0 0 40% 40%;
-  box-shadow: 0 0 5px var(--font);
+  box-shadow: 0 10px 20px var(--details);
   position: relative;
   overflow: hidden; 
 }
@@ -598,6 +680,11 @@ footer .fa_icon:hover {
   }
   .navBig {
     display: none;
+  }
+  /* Home */
+  .main iframe {
+    width: 80vw;
+    height: 45vw;
   }
 }
 

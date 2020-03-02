@@ -6,7 +6,7 @@ const dbDebug = require('debug')('app:db');
 const morgan = require('morgan');
 const cookieParser = require('cookie-parser');
 const { checkAuthentication } = require('./middleware/auth');
-
+const fs = require('fs');
 
 const teams = require('./routes/teams');
 const login = require('./routes/login');
@@ -49,11 +49,17 @@ app.use(cookieParser());
 
 app.get('/', checkAuthentication, (req, res) => {
   res.render('main');
-})
+});
 
 app.get('/restore', (req, res) => {
   res.render('restore');
-})
+});
+
+app.get('/rodo', (req, res) => {
+  const data = fs.readFileSync('public/rodo.pdf');
+  res.contentType('application/pdf');
+  res.send(data);
+});
 
 app.use('/login', login);
 app.use('/register', teams);

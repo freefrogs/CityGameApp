@@ -51,7 +51,7 @@ app.get('/', checkAuthentication, (req, res) => {
   res.render('main');
 });
 
-app.get('/restore', (req, res) => {
+app.get('/restore', checkAuthentication, (req, res) => {
   res.render('restore');
 });
 

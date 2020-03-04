@@ -6,7 +6,7 @@ html(lang='pl')
       include ./header.pug
       .main.register
         h1 ReStore City Game Rejestracja
-        if (quantity <= 41)
+        if (quantity <= 3)
           form(method='POST' action='/register')
             input(type='text' name='name' class='name' placeholder='Nazwa drużyny' autocomplete='new-password')
             input(type='email' name='email' class='email' placeholder='E-mail' autocomplete='off')
@@ -24,8 +24,9 @@ html(lang='pl')
             span ewieczorek@habitat.pl
         else
           .limit
-            h3 Limit miejsc został wyczepany
-            h3 Zapraszamy na kolejne edycje
+            h3 Limit miejsc rejestracji elektronicznej został wyczepany.
+            h3 Możesz jednak przyjść w dniu gry i odebrać pakiet startowy na miejscu.
+            h3 Limit drużyn jest ograniczony, więc liczyć się będzie kolejność zgłoszeń. 
       include ./footer.pug
     script(src="/register.js")
     script(src="/hamburger.js")

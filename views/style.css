@@ -431,27 +431,31 @@ input.rodo {
 }
 
 .super1 {
-  background-image: url('/badge/badge1.png'), radial-gradient(rgb(250, 247, 52), rgb(255, 255, 255), rgb(201, 250, 110), rgb(201, 250, 110));
+  background-image: url('/badge/badge1.png'), radial-gradient(rgb(255, 255, 255), rgb(255, 255, 255), rgb(31, 150, 253));
 }
 
 .super2 {
-  background-image: url('/badge/badge2.png'), radial-gradient(rgb(255, 255, 255), rgb(255, 255, 255), rgb(67, 165, 250));
+  background-image: url('/badge/badge2.png'), radial-gradient(rgb(206, 142, 3), rgb(255,255,255), rgb(255, 138, 4));
 }
 
 .super3 {
-  background-image: url('/badge/badge9.png'), radial-gradient(rgb(250, 217, 30), rgb(255, 255, 255), rgb(11, 156, 28));
+  background-image: url('/badge/badge3.png'), radial-gradient(rgb(158, 77, 1), rgb(255, 255, 255), rgb(246, 66, 252));
 }
 
 .super4 {
-  background-image: url('/badge/badge10.png'), radial-gradient(rgb(250, 218, 182), rgb(255, 255, 255), rgb(250, 153, 17));
+  background-image: url('/badge/badge4.png'), radial-gradient(rgb(78, 74, 70), rgb(255, 255, 255), rgb(250, 233, 2));
 }
 
 .super5 {
-  background-image: url('/badge/badge11.png'), radial-gradient(rgb(255,255,255), rgb(255,255,255), rgb(250, 67, 30));
+  background-image: url('/badge/badge5.png'), radial-gradient(rgb(201, 250, 110), rgb(255, 255, 255), rgb(11, 156, 28));
 }
 
 .super6 {
-  background-image: url('/badge/badge5.png'), radial-gradient(rgb(250, 153, 17), rgb(255,255,255), rgb(147, 93, 247));
+  background-image: url('/badge/badge6.png'), radial-gradient(rgb(68, 168, 255), rgb(255,255,255), rgb(250, 75, 75));
+}
+
+.super7 {
+  background-image: url('/badge/badge7.png'), radial-gradient(rgb(255,255,255), rgb(255,255,255), rgb(250, 3, 3)); 
 }
 
 .dust {

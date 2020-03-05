@@ -6,7 +6,7 @@ html(lang='pl')
       include ./header.pug
       .main.register
         h1 ReStore City Game Rejestracja
-        if (quantity <= 3)
+        if (quantity <= 21)
           form(method='POST' action='/register')
             input(type='text' name='name' class='name' placeholder='Nazwa drużyny' autocomplete='new-password')
             input(type='email' name='email' class='email' placeholder='E-mail' autocomplete='off')

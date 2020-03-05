@@ -8,10 +8,10 @@ html(lang='pl')
         h1 Restoraki kontra Śmieciuch
         .path
           h2 Cel
-          p Zdobądź supermoce i pokonaj złego Śmieciucha.
+          p Zdobądź odznaki i pokonaj złego Śmieciucha.
         .path
           h2 Fabuła
-          p Naszą dzielnicę nawiedził straszny i okrutny Śmieciuch. Jego słudzy rozleźli się po okolicy, zostawiając wszędzie ślady swojej obecności. Cała nadzieja w grupie superbohaterów spod znaku drużyny ReStore, którzy stawią czoło Śmieciuchowi i jego bandzie. Zostań członkiem tej drużyny, weź udział w grze, zdobądź supermoce. Wspólnie z innymi ReStorakami pokonaj złego Śmieciucha.
+          p Naszą dzielnicę nawiedził straszny i okrutny Śmieciuch. Jego słudzy rozleźli się po okolicy, zostawiając wszędzie ślady swojej obecności. Cała nadzieja w grupie superbohaterów spod znaku drużyny ReStore, którzy stawią czoło Śmieciuchowi i jego bandzie. Zostań członkiem tej drużyny, weź udział w grze, zdobądź odznaki. Wspólnie z innymi ReStorakami pokonaj złego Śmieciucha.
         .path
           h2 Zasady ogólne
           p Gra trwa od godziny 14:15 do 17:15. O godzinie 17:15 musicie być w ReStore (miejsce zakończenia gry), nawet jeżeli nie uda się wykonać wszystkich zadań.
@@ -25,8 +25,8 @@ html(lang='pl')
           h3 Zdobywanie punktów
           p Zespoły mogą zdobywać punkty realizując zadania główne zaznaczone na żółto na mapie oraz zadania dodatkowe. Po realizacji zadania otrzymacie odznakę oraz hasło, które wpisujecie na Karcie Zespołu lub w odpowiednim polu w aplikacji.
           h3 Zakończenie gry
-          p Cała drużyna powinna stawić się w ReStore o godzinie 17:15. Tam zdajcie swoje Karty Zespołu. Jeżeli korzystaliście z aplikacji w trakcie gry po prostu się rozgośćcie.
-          p W tym momencie będzicie mieli możliwość wymiany zdobytych odznak na upominek. 
+          p Cała drużyna powinna stawić się w ReStore o godzinie 17:15. Tam otrzymacie dalsze instrukcje.
+          p W tym momencie będzięcie mogli wymienić zdobyte odznaki na upominek. 
           p Po podliczeniu punktów nastąpi wręczenie nagród. W przypadku tej samem liczby punktów wygrywa drużyna, która szybciej zrealizowała zadania.
         .path
           h2 Dodatkowe punkty
@@ -105,7 +105,7 @@ html(lang='pl')
               button.mainButton(type='submit') zatwierdź kod
         .path
           h2 Punkty
-          h4 Twoje supermoce:
+          h4 Twoje odznaki:
           .powers
             if power1
               .super.super1
@@ -129,6 +129,14 @@ html(lang='pl')
               .super
             if power6
               .super.super6
+            else
+              .super
+            if power7
+              .super.super7
+            else
+              .super
+            if power8
+              .super.super7
             else
               .super
           h4 Wskaźnik postępu:

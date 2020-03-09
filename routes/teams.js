@@ -43,6 +43,7 @@ router.post('/', async (req, res) => {
   team = new Team({
     name: req.body.name,
     email: req.body.email,
+    phone: req.body.phone,
     password: hashedPassword
   });
   await team.save();

@@ -23,6 +23,13 @@ const teamSchema = new mongoose.Schema({
     unique: true,
     trim: true
   },
+  phone: {
+    type: String,
+    required: [true, 'Nr telefonu jest wymaganym polem'],
+    minlength: 9,
+    maxlength: 22,
+    trim: true
+  },
   password: {
     type: String,
     required: [true, 'Hasło jest wymaganym polem'],
@@ -59,7 +66,7 @@ teamSchema.methods.generateAuthToken = function() {
     },
     process.env.JWT_PRIVATEKEY,
     {
-      expiresIn: '3h',
+      expiresIn: '4h',
     }
   );
   return token;
@@ -77,6 +84,10 @@ function validateTeamRegister(team) {
       .min(6)
       .max(60)
       .regex(/^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/)
+      .required(),
+    phone: Joi.string()
+      .min(9)
+      .max(22)
       .required(),
     password: Joi.string()
       .min(6)

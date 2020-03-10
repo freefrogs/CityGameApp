@@ -61,11 +61,11 @@ app.get('/rodo', (req, res) => {
   res.send(data);
 });
 
-//app.use('/login', login);
+app.use('/login', login);
 app.use('/register', teams);
-//app.use('/logout', logout);
-//app.use('/teams', admin);
-//app.use('/game', game);
+app.use('/logout', logout);
+app.use('/teams', admin);
+app.use('/game', game);
 
 app.use(checkAuthentication, function (req, res, next) {
   res.status(404).render('badpath')

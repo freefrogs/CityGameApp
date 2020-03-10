@@ -10,15 +10,15 @@ html(lang='pl')
             caption Drużyny biorące udział w grze
             tr.table_headings 
               th Nazwa drużyny
-              th E-mail kontaktowy
+              th E-mail
+              th Nr telefon
               th Ilość punktów
-              th Czas
             each team in teams
               tr.team_data
                 th=team.name
                 th=team.email
+                th=team.phone
                 th=team.points
-                th=team.endTime
         .teams_email
           button.mainButton.email_button Pokaż dane kontaktowe
           p.emails_string=emails
